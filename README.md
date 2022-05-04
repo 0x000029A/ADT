@@ -1,2 +1,2 @@
-# ADT
+# Array ADT
 Abstract DataType
