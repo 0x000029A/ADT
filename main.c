@@ -6,5 +6,6 @@ int main() {
     int arr_main[] = {1,2,3,4,5};
     arr_init(arr_s, arr_main);
     arr_disp(&array);
+    /*Comment */
     return 0;
 }
