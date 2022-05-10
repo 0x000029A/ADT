@@ -3,7 +3,7 @@
 #include "Array_ADT.h"
 
 int arr_init(array *farray, int array_size, int array_length, const int *arr) {
-    if (array_length <= array_size && array_length > 0 && array_size > 0 && arr != NULL && farray != NULL) {
+    if (array_length <= array_size && array_size > 0 && arr != NULL && farray != NULL) {
         farray->size = array_size;
         farray->length = array_length;
         farray->A = (int *) calloc(array_size, sizeof(int));
@@ -124,4 +124,47 @@ int arr_min(array *farray) {
     return max;
 }
 
+int arr_reverse(array *farray) {
+    int i = 0, temp;
+    for (; i < farray->length / 2; i++) {
+        temp = farray->A[farray->length - 1 - i];
+        farray->A[farray->length - 1 - i] = farray->A[i];
+        farray->A[i] = temp;
+    }
+    return 0;
+}
 
+int arr_isSorted(array *farray) {
+    int i = 0;
+    for (; i < farray->length - 1; i++) {
+        if (farray->A[i] > farray->A[i + 1])
+            return -1;
+    }
+    return 1;
+}
+
+void arr_sinsert(array *farray, int element_v) {
+    int i = 0;
+    for (; i < farray->length; i++) {
+        if (element_v <= farray->A[i]) {
+            arr_insert(farray, i, element_v);
+            break;
+        } else {
+            arr_insert(farray, farray->length, element_v);
+            break;
+        }
+    }
+}
+
+void arr_smerge(array *farray1, array *farray2, array *farray3) {
+    int i = 0, j = 0, k = 0;
+    farray3->length = farray1->length + farray2->length;
+    while (i < farray1->length || j < farray2->length) {
+        if (farray1->A[i] <= farray2->A[j]) {
+            farray3->A[k++] = farray1->A[i++];
+        } else if (farray1->A[i] >= farray2->A[j]) {
+            farray3->A[k++] = farray2->A[j++];
+        }
+    }
+
+}

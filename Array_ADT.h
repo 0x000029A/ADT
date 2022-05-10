@@ -26,8 +26,23 @@ void arr_set(array *farray, int index, int element_v);
 int arr_get(array *farray, int index);
 int arr_avg(array *farray);
 int arr_max(array *farray);
-
 int arr_sum(array *farray);
 int arr_min(array *farray);
+int arr_reverse(array *farray);
+int arr_isSorted(array *farray);
+void arr_sinsert(array *farray, int element_v);
 
+void arr_smerge(array *farray1, array *farray2, array *farray3);
+
+/*
+void arr_rrotate(array *farray);
+void arr_lrotate(array *farray);
+void arr_rshift(array *farray);
+void arr_lshift(array *farray);
+void arr_signSort(array *farray);
+ append
+ concat
+ compare
+ copy
+*/
 #endif
