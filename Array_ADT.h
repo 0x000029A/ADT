@@ -31,18 +31,18 @@ int arr_min(array *farray);
 int arr_reverse(array *farray);
 int arr_isSorted(array *farray);
 void arr_sinsert(array *farray, int element_v);
-
 void arr_smerge(array *farray1, array *farray2, array *farray3);
-
-/*
 void arr_rrotate(array *farray);
 void arr_lrotate(array *farray);
 void arr_rshift(array *farray);
 void arr_lshift(array *farray);
-void arr_signSort(array *farray);
- append
- concat
- compare
- copy
-*/
+
+// TODO Menu Driver
+// TODO APPEND ARRAY
+// TODO Sign Sort
+// TODO concat
+// TODO compare
+// TODO copy
+// TODO Missing Element
+
 #endif

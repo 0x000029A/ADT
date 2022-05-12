@@ -159,12 +159,42 @@ void arr_sinsert(array *farray, int element_v) {
 void arr_smerge(array *farray1, array *farray2, array *farray3) {
     int i = 0, j = 0, k = 0;
     farray3->length = farray1->length + farray2->length;
-    while (i < farray1->length || j < farray2->length) {
-        if (farray1->A[i] <= farray2->A[j]) {
+    while (i < farray1->length && j < farray2->length) {
+        if (farray1->A[i] <= farray2->A[j])
             farray3->A[k++] = farray1->A[i++];
-        } else if (farray1->A[i] >= farray2->A[j]) {
+        else if (farray1->A[i] >= farray2->A[j])
             farray3->A[k++] = farray2->A[j++];
-        }
     }
+    for (; i < farray1->length; i++)
+        farray3->A[k++] = farray1->A[i];
+    for (; j < farray2->length; j++)
+        farray3->A[k++] = farray2->A[j];
+}
 
+void arr_lrotate(array *farray) {
+    int i = 0, le = farray->A[0];
+    for (; i < farray->length - 1; i++)
+        farray->A[i] = farray->A[i + 1];
+    farray->A[i] = le;
+}
+
+void arr_rrotate(array *farray) {
+    int i = farray->length - 1, re = farray->A[farray->length - 1];
+    for (; i > 0; i--)
+        farray->A[i] = farray->A[i - 1];
+    farray->A[0] = re;
+}
+
+void arr_rshift(array *farray) {
+    int i = farray->length - 1;
+    for (; i > 0; i--)
+        farray->A[i] = farray->A[i - 1];
+    farray->A[0] = 0;
+}
+
+void arr_lshift(array *farray) {
+    int i = 0;
+    for (; i < farray->length - 1; i++)
+        farray->A[i] = farray->A[i + 1];
+    farray->A[farray->length - 1] = 0;
 }
