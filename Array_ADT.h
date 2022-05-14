@@ -43,6 +43,7 @@ void arr_lshift(array *farray);
 // TODO concat
 // TODO compare
 // TODO copy
-// TODO Missing Element
+// TODO Union
+// TODO Intersection
 
 #endif
