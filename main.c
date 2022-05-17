@@ -1,6 +1,6 @@
 #include "Array_ADT.h"
 #include <stdio.h>
-// Sample program
+// Program sample
 int main() {
     array array1;
     int arr_main[5] = {1, 3, 5, 7, 9};
